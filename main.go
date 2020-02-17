@@ -59,6 +59,7 @@ func main() {
 	r.HandleFunc("/", HomeHandler)
 	r.HandleFunc("/articles", returnAllArticles)
 	r.HandleFunc("/articles/{id}", returnSingleArticle)
+	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("vue"))))
 	http.Handle("/", r)
 
 	srv := &http.Server{
