@@ -22,7 +22,18 @@
       </section>
       <section class="section">
         <div class="container" id="vueapp">
-          {{message}}
+          <p>message: &nbsp;{{ message }}</p>
+          <br>
+          <h3 class="title is-size-3">Articles</h3>
+          <ul>
+            <li v-for="article in articles">
+              <h4 class="is-size-4">{{ article.title }}</h4>
+              <br>
+              {{ article.desc}} 
+              <hr>
+            </li>
+          </ul>
+          
         </div>
       </section>
       <footer class="footer">
